@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableroDeAjedrez", "TableroDeAjedrez\TableroDeAjedrez.csproj", "{C2E54B88-41EF-4C4E-8157-98ADDF1D03A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2E54B88-41EF-4C4E-8157-98ADDF1D03A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E54B88-41EF-4C4E-8157-98ADDF1D03A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E54B88-41EF-4C4E-8157-98ADDF1D03A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E54B88-41EF-4C4E-8157-98ADDF1D03A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15FB2B68-3386-4CFC-AFBB-7994C4398655}
+	EndGlobalSection
+EndGlobal
