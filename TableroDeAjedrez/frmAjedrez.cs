@@ -11,28 +11,35 @@ namespace TableroDeAjedrez
 {
     public partial class frmAjedrez : Form
     {
-        public frmAjedrez()
+        public frmAjedrez(string nombre)
         {
             InitializeComponent();
         }
+
+        public string nombre;
         private Game _game = new Game();
         private List<SquareControl> _squares = new List<SquareControl>();
 
         /// <summary>
-        /// Dibuja el tablero en el panel de 8x8 en blanco y negro.
+        /// Dibuja el tablero en el panel de 8x8 en verde y gris.
         /// </summary>
         private void FormarTablero()
         {
-            Size _size = new Size(pnTABLERO.Width / 8, pnTABLERO.Height / 8);
-            for (int f = 0; f < 8; f++)
-                for (int c = 0; c < 8; c++)
-                {
-                    var panel = new Panel();
-                    panel.Size = _size;
-                    panel.Location = new Point(c * _size.Width, f * _size.Height);
-                    panel.BackColor = (c + f) % 2 == 0 ? Color.Gray : Color.LightGray;
-                    pnTABLERO.Controls.Add(panel);
-                }
+            label13.Text = nombre;
+            // Creamos los controles para las celdas del tablero
+            foreach (Square square in _game.Board)
+            {
+                SquareControl control = new SquareControl();
+                control.BoardSquare = square;
+                _squares.Add(control);
+                control.CheckedChanged += Square_CheckedChanged;
+            }
+            pnTABLERO.Controls.AddRange(_squares.ToArray());
+            // Controlador para el evento de cambio de estado del juego
+            _game.StateChanged += Game_StateChanged;
+            // Inicia el juego colocando en la parte superior el color seleccionado
+            _game.Start(rbFICHASNEGRAS.Checked ? PlayerColor.Black : PlayerColor.White);
+        
         }
 
         /// <summary>
@@ -107,7 +114,7 @@ namespace TableroDeAjedrez
                     foreach (SquareControl square in _squares)
                     {
                         square.Enabled = false;
-                        square.FlatAppearance.BorderSize = 0;
+                        square.FlatAppearance.BorderSize = 1;
                     }
                     break;
             }
@@ -123,20 +130,7 @@ namespace TableroDeAjedrez
 
         private void frmAjedrez_Load(object sender, EventArgs e)
         {
-            //FormarTablero();
-            // Creamos los controles para las celdas del tablero
-            foreach (Square square in _game.Board)
-            {
-                SquareControl control = new SquareControl();
-                control.BoardSquare = square;
-                _squares.Add(control);
-                control.CheckedChanged += Square_CheckedChanged;
-            }
-            pnTABLERO.Controls.AddRange(_squares.ToArray());
-            // Controlador para el evento de cambio de estado del juego
-            _game.StateChanged += Game_StateChanged;
-            // Inicia el juego colocando en la parte superior el color seleccionado
-            _game.Start(rbFICHASNEGRAS.Checked ? PlayerColor.Black : PlayerColor.White);
+            FormarTablero();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e) => this.Close();

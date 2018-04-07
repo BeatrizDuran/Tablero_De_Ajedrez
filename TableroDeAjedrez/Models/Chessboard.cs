@@ -71,25 +71,6 @@ namespace TableroDeAjedrez.Modelos
             int column = (PlayerOnTop == PlayerColor.White ? 4 : 3);
             GetSquare(0, column).Piece = new King(PlayerOnTop);
             GetSquare(7, column).Piece = new King(bottomColor);
-            // Queens
-            //column = (column == 4 ? 3 : 4);
-            //GetSquare(0, column).Piece = new Queen(PlayerOnTop);
-            //GetSquare(7, column).Piece = new Queen(bottomColor);
-            // Rooks
-            //GetSquare(0, 0).Piece = new Rook(PlayerOnTop);
-            //GetSquare(0, 7).Piece = new Rook(PlayerOnTop);
-            //GetSquare(7, 0).Piece = new Rook(bottomColor);
-            //GetSquare(7, 7).Piece = new Rook(bottomColor);
-            // Knights
-            //GetSquare(0, 1).Piece = new Knight(PlayerOnTop);
-            //GetSquare(0, 6).Piece = new Knight(PlayerOnTop);
-            //GetSquare(7, 1).Piece = new Knight(bottomColor);
-            //GetSquare(7, 6).Piece = new Knight(bottomColor);
-            // Bishops
-            //GetSquare(0, 2).Piece = new Bishop(PlayerOnTop);
-            //GetSquare(0, 5).Piece = new Bishop(PlayerOnTop);
-            //GetSquare(7, 2).Piece = new Bishop(bottomColor);
-            //GetSquare(7, 5).Piece = new Bishop(bottomColor);
             // Pawns
             for (int i = 0; i < 8; i++)
             {

@@ -8,7 +8,7 @@ namespace TableroDeAjedrez.Controles
      class SquareControl : CheckBox
     {
         // Colores de fondo de las celdas
-        private Color DarkColor = Color.DarkGray;
+        private Color DarkColor = Color.DarkSlateGray;
         private Color LightColor = Color.LightGray;
 
         /// <summary>
@@ -19,8 +19,8 @@ namespace TableroDeAjedrez.Controles
             FlatStyle = FlatStyle.Flat;
             Appearance = Appearance.Button;
             BackgroundImageLayout = ImageLayout.Zoom;
-            FlatAppearance.BorderColor = Color.Red;
-            FlatAppearance.BorderSize = 0;
+            FlatAppearance.BorderColor = Color.Black;
+            FlatAppearance.BorderSize = 1;
         }
 
         /// <summary>
