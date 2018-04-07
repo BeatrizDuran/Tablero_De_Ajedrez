@@ -33,7 +33,6 @@
             this.rbFICHASNEGRAS = new System.Windows.Forms.RadioButton();
             this.gbSELECCIONFICHAS = new System.Windows.Forms.GroupBox();
             this.rbFICHASBLANCAS = new System.Windows.Forms.RadioButton();
-            this.btnREINICIAR = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +49,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.gbSELECCIONFICHAS.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTABLERO
@@ -64,17 +67,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(170, 18);
+            this.label1.Location = new System.Drawing.Point(81, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 32);
+            this.label1.Size = new System.Drawing.Size(169, 64);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tablero de Ajedrez";
+            this.label1.Text = "Tablero de \r\n  Ajedrez\r\n";
             // 
             // rbFICHASNEGRAS
             // 
             this.rbFICHASNEGRAS.AutoSize = true;
             this.rbFICHASNEGRAS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbFICHASNEGRAS.Location = new System.Drawing.Point(6, 25);
+            this.rbFICHASNEGRAS.Location = new System.Drawing.Point(6, 53);
             this.rbFICHASNEGRAS.Name = "rbFICHASNEGRAS";
             this.rbFICHASNEGRAS.Size = new System.Drawing.Size(128, 24);
             this.rbFICHASNEGRAS.TabIndex = 2;
@@ -88,9 +91,9 @@
             this.gbSELECCIONFICHAS.Controls.Add(this.rbFICHASNEGRAS);
             this.gbSELECCIONFICHAS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbSELECCIONFICHAS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSELECCIONFICHAS.Location = new System.Drawing.Point(54, 62);
+            this.gbSELECCIONFICHAS.Location = new System.Drawing.Point(281, 28);
             this.gbSELECCIONFICHAS.Name = "gbSELECCIONFICHAS";
-            this.gbSELECCIONFICHAS.Size = new System.Drawing.Size(300, 60);
+            this.gbSELECCIONFICHAS.Size = new System.Drawing.Size(255, 83);
             this.gbSELECCIONFICHAS.TabIndex = 3;
             this.gbSELECCIONFICHAS.TabStop = false;
             this.gbSELECCIONFICHAS.Text = "Seleccione el color de las fichas:";
@@ -99,24 +102,13 @@
             // 
             this.rbFICHASBLANCAS.AutoSize = true;
             this.rbFICHASBLANCAS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbFICHASBLANCAS.Location = new System.Drawing.Point(153, 25);
+            this.rbFICHASBLANCAS.Location = new System.Drawing.Point(6, 25);
             this.rbFICHASBLANCAS.Name = "rbFICHASBLANCAS";
             this.rbFICHASBLANCAS.Size = new System.Drawing.Size(134, 24);
             this.rbFICHASBLANCAS.TabIndex = 3;
             this.rbFICHASBLANCAS.TabStop = true;
             this.rbFICHASBLANCAS.Text = "Fichas Blancas";
             this.rbFICHASBLANCAS.UseVisualStyleBackColor = true;
-            // 
-            // btnREINICIAR
-            // 
-            this.btnREINICIAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnREINICIAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnREINICIAR.Location = new System.Drawing.Point(437, 74);
-            this.btnREINICIAR.Name = "btnREINICIAR";
-            this.btnREINICIAR.Size = new System.Drawing.Size(99, 48);
-            this.btnREINICIAR.TabIndex = 4;
-            this.btnREINICIAR.Text = "Reiniciar";
-            this.btnREINICIAR.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -278,11 +270,41 @@
             this.label21.TabIndex = 24;
             this.label21.Text = "C";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(568, 25);
+            this.toolStrip1.TabIndex = 25;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::TableroDeAjedrez.Properties.Resources._012_restart_16;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(105, 22);
+            this.toolStripButton1.Text = "Reiniciar juego";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::TableroDeAjedrez.Properties.Resources.if_00_ELASTOFONT_STORE_READY_close_2703079;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButton2.Text = "Salir";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // frmAjedrez
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 587);
+            this.ClientSize = new System.Drawing.Size(568, 594);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -299,16 +321,17 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnREINICIAR);
             this.Controls.Add(this.gbSELECCIONFICHAS);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnTABLERO);
             this.Name = "frmAjedrez";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajedrez";
+            this.Text = "Tablero de Ajedrez";
             this.Load += new System.EventHandler(this.frmAjedrez_Load);
             this.gbSELECCIONFICHAS.ResumeLayout(false);
             this.gbSELECCIONFICHAS.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +344,6 @@
         private System.Windows.Forms.RadioButton rbFICHASNEGRAS;
         private System.Windows.Forms.GroupBox gbSELECCIONFICHAS;
         private System.Windows.Forms.RadioButton rbFICHASBLANCAS;
-        private System.Windows.Forms.Button btnREINICIAR;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -338,6 +360,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
 
