@@ -11,12 +11,11 @@ namespace TableroDeAjedrez
 {
     public partial class frmAjedrez : Form
     {
-        public frmAjedrez(string nombre)
+        public frmAjedrez()
         {
             InitializeComponent();
         }
-
-        public string nombre;
+        
         private Game _game = new Game();
         private List<SquareControl> _squares = new List<SquareControl>();
 
@@ -25,7 +24,6 @@ namespace TableroDeAjedrez
         /// </summary>
         private void FormarTablero()
         {
-            label13.Text = nombre;
             // Creamos los controles para las celdas del tablero
             foreach (Square square in _game.Board)
             {
@@ -39,6 +37,7 @@ namespace TableroDeAjedrez
             _game.StateChanged += Game_StateChanged;
             // Inicia el juego colocando en la parte superior el color seleccionado
             _game.Start(rbFICHASNEGRAS.Checked ? PlayerColor.Black : PlayerColor.White);
+            rbFICHASBLANCAS.Checked = true;
         
         }
 

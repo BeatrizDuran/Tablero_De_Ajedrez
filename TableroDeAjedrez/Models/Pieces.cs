@@ -190,5 +190,156 @@ namespace TableroDeAjedrez.Modelos
 
     }
 
+    /// <summary>
+    /// Torre
+    /// </summary>
+    //class Rook : ChessPiece
+    //{
+
+    //    /// <summary>
+    //    /// Inicializa una nueva clase de <see cref="Rook"/>
+    //    /// </summary>
+    //    /// <param name="color">Color de la Pieza</param>
+    //    public Rook(PlayerColor color) : base(color) { }
+
+    //    /// <summary>
+    //    /// Devuelve las celdas a las que puede moverse la pieza
+    //    /// </summary>
+    //    /// <returns>Lista de celdas</returns>
+    //    public override IEnumerable<Square> GetDestinationSquares()
+    //    {
+    //        if (BoardSquare == null) return null;
+
+    //        List<Square> posibleSquares = new List<Square>();
+    //        // A la izquierda
+    //        posibleSquares.AddRange(DestinationSquaresOnOneDirection(0, -1));
+    //        // A la derecha
+    //        posibleSquares.AddRange(DestinationSquaresOnOneDirection(0, 1));
+    //        // Hacia adelante
+    //        posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, 0));
+    //        // Hacia atrás
+    //        posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, 0));
+
+    //        return posibleSquares;
+    //    }
+
+    //}
+
+    /// <summary>
+    /// Alfil
+    /// </summary>
+    class Bishop : ChessPiece
+    {
+
+        /// <summary>
+        /// Inicializa una nueva instancia de <see cref="Bishop"/>
+        /// </summary>
+        /// <param name="color">Color de la pieza</param>
+        public Bishop(PlayerColor color) : base(color) { }
+
+        /// <summary>
+        /// Devuelve las celdas a las que puede moverse la pieza
+        /// </summary>
+        /// <returns>Lista de celdas</returns>
+        public override IEnumerable<Square> GetDestinationSquares()
+        {
+            if (BoardSquare == null) return null;
+
+            List<Square> posibleSquares = new List<Square>();
+            // Hacia adelante a la izquierda
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, -1));
+            // Hacia adelante a la derecha
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, 1));
+            // Hacia atrás a la izquierda
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, -1));
+            // Hacia atrás a la derecha
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, 1));
+
+            return posibleSquares;
+        }
+    }
+
+    /// <summary>
+    /// Reina
+    /// </summary>
+    class Queen : ChessPiece
+    {
+
+        /// <summary>
+        /// Inicializa una nueva instancia de <see cref="Queen"/>
+        /// </summary>
+        /// <param name="color">Color de la pieza</param>
+        public Queen(PlayerColor color) : base(color) { }
+
+        /// <summary>
+        /// Devuelve las celdas a las que puede moverse la pieza
+        /// </summary>
+        /// <returns>Lista de celdas</returns>
+        public override IEnumerable<Square> GetDestinationSquares()
+        {
+            if (BoardSquare == null) return null;
+
+            List<Square> posibleSquares = new List<Square>();
+            // Hacia adelante a la izquierda
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, -1));
+            // Hacia adelante
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, 0));
+            // Hacia adelante a la derecha
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(1, 1));
+            // Hacia la izquierda
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(0, -1));
+            // Hacia la derecha
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(0, 1));
+            // Hacia atrás a la izquierda
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, -1));
+            // Hacia atrás
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, 0));
+            // Hacia atrás a la derecha
+            posibleSquares.AddRange(DestinationSquaresOnOneDirection(-1, 1));
+
+            return posibleSquares;
+        }
+    }
+
+    /// <summary>
+    /// Caballo
+    /// </summary>
+    class Knight : ChessPiece
+    {
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="Knight"/>
+        /// </summary>
+        /// <param name="color">Color de la pieza</param>
+        public Knight(PlayerColor color) : base(color) { }
+
+        /// <summary>
+        /// Movimmientos que puede realizar el caballo
+        /// </summary>
+        private Movement[] moves =
+        {
+            new Movement {Forward=1, ToRight=-2 },
+            new Movement {Forward=2, ToRight=-1 },
+            new Movement {Forward=2, ToRight=1 },
+            new Movement {Forward=1, ToRight=2 },
+            new Movement {Forward=-1, ToRight=-2 },
+            new Movement {Forward=-2, ToRight=-1 },
+            new Movement {Forward=-2, ToRight=1 },
+            new Movement {Forward=-1, ToRight=2 }
+        };
+
+        /// <summary>
+        /// Devuelve las celdas a las que puede moverse la pieza
+        /// </summary>
+        /// <returns>Lista de celdas</returns>
+        public override IEnumerable<Square> GetDestinationSquares()
+        {
+            if (BoardSquare == null) return null;
+
+            return DestinationSquaresForMoves(moves);
+        }
+    }
+
+
 
 }

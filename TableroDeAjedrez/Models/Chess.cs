@@ -192,9 +192,9 @@ namespace TableroDeAjedrez.Modelos
                 SelectedSquare = null;
                 // Una vez realizado el movimiento se comprueba si ha finalizado
                 // (si hay ganador)
-                //if (!CheckForWin())
-                //    State = (State == GameState.WhitePlayerMoving ?
-                //        GameState.PendingForBlackMove : GameState.PendingForWhiteMove);
+                if (!CheckForWin())
+                    State = (State == GameState.WhitePlayerMoving ?
+                        GameState.PendingForBlackMove : GameState.PendingForWhiteMove);
                 return true;
             }
             else
@@ -222,22 +222,22 @@ namespace TableroDeAjedrez.Modelos
         /// Comprueba si el juego ha finalizado (si existe ganador)
         /// </summary>
         /// <returns>true o false indicando si el juego ha finalizado</returns>
-      //  private bool CheckForWin()
-        //{
-        //    // Si únicamente queda un rey el juego ha terminado
-        //    IEnumerable<ChessPiece> kings = Board.Select(s => s.Piece)
-        //        .Where(p => p != null && p is King);
-        //    if (kings.Count() == 1)
-        //    {
-        //        State = (kings.First().Color == PlayerColor.White ?
-        //            GameState.WhitePlayerWin : GameState.BlackPlayerWin);
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+        private bool CheckForWin()
+        {
+            // Si únicamente queda un rey el juego ha terminado
+            IEnumerable<ChessPiece> kings = Board.Select(s => s.Piece)
+                .Where(p => p != null && p is King);
+            if (kings.Count() == 1)
+            {
+                State = (kings.First().Color == PlayerColor.White ?
+                    GameState.WhitePlayerWin : GameState.BlackPlayerWin);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
     

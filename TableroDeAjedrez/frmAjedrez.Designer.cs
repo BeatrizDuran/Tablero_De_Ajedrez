@@ -52,7 +52,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblNOMBRE = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.gbSELECCIONFICHAS.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -301,15 +301,15 @@
             this.toolStripButton2.Text = "Salir";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // label13
+            // lblNOMBRE
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(467, 172);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(26, 16);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Tu";
+            this.lblNOMBRE.AutoSize = true;
+            this.lblNOMBRE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNOMBRE.Location = new System.Drawing.Point(467, 172);
+            this.lblNOMBRE.Name = "lblNOMBRE";
+            this.lblNOMBRE.Size = new System.Drawing.Size(26, 16);
+            this.lblNOMBRE.TabIndex = 26;
+            this.lblNOMBRE.Text = "Tu";
             // 
             // label15
             // 
@@ -327,7 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 594);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblNOMBRE);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -387,7 +387,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblNOMBRE;
         private System.Windows.Forms.Label label15;
     }
 }
